@@ -1,0 +1,143 @@
+
+[
+  {
+    "title": "React in 100 Seconds",
+    "channel": "Fireship",
+    "videoUrl": "https://www.youtube.com/embed/Tn6-PIqc4UM",
+    "thumbnail": "https://i.ytimg.com/vi/Tn6-PIqc4UM/hqdefault.jpg",
+    "profilePic": "https://yt3.ggpht.com/ytc/APkrFKYPzV7CZmzT4b14FTxOU8WYdjq1PRvF1PC0VvYb=s88-c-k-c0x00ffffff-no-rj"
+  },
+  {
+    "title": "Node.js Crash Course",
+    "channel": "Traversy Media",
+    "videoUrl": "https://www.youtube.com/embed/fBNz5xF-Kx4",
+    "thumbnail": "https://i.ytimg.com/vi/fBNz5xF-Kx4/hqdefault.jpg",
+    "profilePic": "https://yt3.ggpht.com/ytc/APkrFKYuRbKyhndgMQqM1r5RC3Z3SrsH5yLbZJejJzsh=s88-c-k-c0x00ffffff-no-rj"
+  },
+  {
+    "title": "JavaScript Full Course",
+    "channel": "freeCodeCamp.org",
+    "videoUrl": "https://www.youtube.com/embed/jS4aFq5-91M",
+    "thumbnail": "https://i.ytimg.com/vi/jS4aFq5-91M/hqdefault.jpg",
+    "profilePic": "https://yt3.ggpht.com/ytc/APkrFKZfU_wHi_Y0IuJxFYRUtljXm4VuO4zLzjQguZs5=s88-c-k-c0x00ffffff-no-rj"
+  },
+  {
+    "title": "MongoDB Tutorial",
+    "channel": "Programming with Mosh",
+    "videoUrl": "https://www.youtube.com/embed/oSIv-E60NiU",
+    "thumbnail": "https://i.ytimg.com/vi/oSIv-E60NiU/hqdefault.jpg",
+    "profilePic": "https://yt3.ggpht.com/ytc/APkrFKZqYOjqDgRJfdtiSuYPJDY_YovH27X4sK7ms37L9g=s88-c-k-c0x00ffffff-no-rj"
+  },
+  {
+    "title": "HTML & CSS Crash Course",
+    "channel": "SuperSimpleDev",
+    "videoUrl": "https://www.youtube.com/embed/mU6anWqZJcc",
+    "thumbnail": "https://i.ytimg.com/vi/mU6anWqZJcc/hqdefault.jpg",
+    "profilePic": "https://yt3.ggpht.com/ytc/APkrFKb5Deh2XGAKVLl2tAReT3h-LqKmm5ChXDiJlZbK=s88-c-k-c0x00ffffff-no-rj"
+  },
+  {
+    "title": "What is REST API?",
+    "channel": "Web Dev Simplified",
+    "videoUrl": "https://www.youtube.com/embed/Q-BpqyOT3a8",
+    "thumbnail": "https://i.ytimg.com/vi/Q-BpqyOT3a8/hqdefault.jpg",
+    "profilePic": "https://yt3.ggpht.com/ytc/APkrFKavKUEPBjlIiwpp4yVzGkZz2nAZPQ9hylB7qbLV=s88-c-k-c0x00ffffff-no-rj"
+  },
+  {
+    "title": "Docker Crash Course",
+    "channel": "TechWorld with Nana",
+    "videoUrl": "https://www.youtube.com/embed/3c-iBn73dDE",
+    "thumbnail": "https://i.ytimg.com/vi/3c-iBn73dDE/hqdefault.jpg",
+    "profilePic": "https://yt3.ggpht.com/ytc/APkrFKZBdK0C-FqUGa8TFAxdT3NoGeXWhcojRAcznP-5=s88-c-k-c0x00ffffff-no-rj"
+  },
+  {
+    "title": "JWT Authentication Explained",
+    "channel": "Web Dev Simplified",
+    "videoUrl": "https://www.youtube.com/embed/7Q17ubqLfaM",
+    "thumbnail": "https://i.ytimg.com/vi/7Q17ubqLfaM/hqdefault.jpg",
+    "profilePic": "https://yt3.ggpht.com/ytc/APkrFKavKUEPBjlIiwpp4yVzGkZz2nAZPQ9hylB7qbLV=s88-c-k-c0x00ffffff-no-rj"
+  },
+  {
+    "title": "Tailwind CSS in 100 Seconds",
+    "channel": "Fireship",
+    "videoUrl": "https://www.youtube.com/embed/6zIuAyLZPH0",
+    "thumbnail": "https://i.ytimg.com/vi/6zIuAyLZPH0/hqdefault.jpg",
+    "profilePic": "https://yt3.ggpht.com/ytc/APkrFKYPzV7CZmzT4b14FTxOU8WYdjq1PRvF1PC0VvYb=s88-c-k-c0x00ffffff-no-rj"
+  },
+  {
+    "title": "Build a YouTube Clone",
+    "channel": "JavaScript Mastery",
+    "videoUrl": "https://www.youtube.com/embed/NT299zIk2JY",
+    "thumbnail": "https://i.ytimg.com/vi/NT299zIk2JY/hqdefault.jpg",
+    "profilePic": "https://yt3.ggpht.com/ytc/APkrFKa7HV0tM71lJILi19QoKvuOowTX3BGLanIJD7U8=s88-c-k-c0x00ffffff-no-rj"
+  },
+  {
+    "title": "Git & GitHub Crash Course",
+    "channel": "Traversy Media",
+    "videoUrl": "https://www.youtube.com/embed/SWYqp7iY_Tc",
+    "thumbnail": "https://i.ytimg.com/vi/SWYqp7iY_Tc/hqdefault.jpg",
+    "profilePic": "https://yt3.ggpht.com/ytc/APkrFKYuRbKyhndgMQqM1r5RC3Z3SrsH5yLbZJejJzsh=s88-c-k-c0x00ffffff-no-rj"
+  },
+  {
+    "title": "Next.js in 100 Seconds",
+    "channel": "Fireship",
+    "videoUrl": "https://www.youtube.com/embed/Sklc_fQBmcs",
+    "thumbnail": "https://i.ytimg.com/vi/Sklc_fQBmcs/hqdefault.jpg",
+    "profilePic": "https://yt3.ggpht.com/ytc/APkrFKYPzV7CZmzT4b14FTxOU8WYdjq1PRvF1PC0VvYb=s88-c-k-c0x00ffffff-no-rj"
+  },
+  {
+    "title": "Full Stack Project Tutorial",
+    "channel": "Code with Harry",
+    "videoUrl": "https://www.youtube.com/embed/A71aqufiNtQ",
+    "thumbnail": "https://i.ytimg.com/vi/A71aqufiNtQ/hqdefault.jpg",
+    "profilePic": "https://yt3.ggpht.com/ytc/APkrFKYI-pbZPvxOsH7DdsoTKnq1XZ7NmCRyFNSXQ2Tg=s88-c-k-c0x00ffffff-no-rj"
+  },
+  {
+    "title": "React Query Tutorial",
+    "channel": "The Net Ninja",
+    "videoUrl": "https://www.youtube.com/embed/XkBBfjbKc88",
+    "thumbnail": "https://i.ytimg.com/vi/XkBBfjbKc88/hqdefault.jpg",
+    "profilePic": "https://yt3.ggpht.com/ytc/APkrFKaDv-Fy0iNRS3D0kPlnCjY1_FAcXl0ZBGe_p2qx=s88-c-k-c0x00ffffff-no-rj"
+  },
+  {
+    "title": "Express.js Crash Course",
+    "channel": "Academind",
+    "videoUrl": "https://www.youtube.com/embed/L72fhGm1tfE",
+    "thumbnail": "https://i.ytimg.com/vi/L72fhGm1tfE/hqdefault.jpg",
+    "profilePic": "https://yt3.ggpht.com/ytc/APkrFKZTDksgYt7bFjWUN3ByomH9NLVb_lChflJjJDYK=s88-c-k-c0x00ffffff-no-rj"
+  },
+  {
+    "title": "JavaScript DOM Tutorial",
+    "channel": "Kevin Powell",
+    "videoUrl": "https://www.youtube.com/embed/0ik6X4DJKCc",
+    "thumbnail": "https://i.ytimg.com/vi/0ik6X4DJKCc/hqdefault.jpg",
+    "profilePic": "https://yt3.ggpht.com/ytc/APkrFKYmfsjNlu1ARs5ijQr0KLxiWYjTWUgJEOdG5wl3NQ=s88-c-k-c0x00ffffff-no-rj"
+  },
+  {
+    "title": "Top 10 JavaScript Tricks",
+    "channel": "CodeSTACKr",
+    "videoUrl": "https://www.youtube.com/embed/0ik6X4DJKCc",
+    "thumbnail": "https://i.ytimg.com/vi/0ik6X4DJKCc/hqdefault.jpg",
+    "profilePic": "https://yt3.ggpht.com/ytc/APkrFKZpVRVzKaKnOyaB6zOTa_NgnBvDyVdYfI-Qri_2=s88-c-k-c0x00ffffff-no-rj"
+  },
+  {
+    "title": "React vs Angular vs Vue",
+    "channel": "Tech With Tim",
+    "videoUrl": "https://www.youtube.com/embed/QsBLWB_d9L0",
+    "thumbnail": "https://i.ytimg.com/vi/QsBLWB_d9L0/hqdefault.jpg",
+    "profilePic": "https://yt3.ggpht.com/ytc/APkrFKZ4MLabNf8ZRYAJMyMj8Nqtv-EYxjFeYFxeqO6Z=s88-c-k-c0x00ffffff-no-rj"
+  },
+  {
+    "title": "Authentication System in MERN",
+    "channel": "Thapa Technical",
+    "videoUrl": "https://www.youtube.com/embed/7H_QH9nipNs",
+    "thumbnail": "https://i.ytimg.com/vi/7H_QH9nipNs/hqdefault.jpg",
+    "profilePic": "https://yt3.ggpht.com/ytc/APkrFKaKzUgRrk-ffHK5U2XMAs9Pb1JY-xhd_fikXOaQ=s88-c-k-c0x00ffffff-no-rj"
+  },
+  {
+    "title": "JavaScript Promises",
+    "channel": "Web Dev Simplified",
+    "videoUrl": "https://www.youtube.com/embed/DHvZLI7Db8E",
+    "thumbnail": "https://i.ytimg.com/vi/DHvZLI7Db8E/hqdefault.jpg",
+    "profilePic": "https://yt3.ggpht.com/ytc/APkrFKavKUEPBjlIiwpp4yVzGkZz2nAZPQ9hylB7qbLV=s88-c-k-c0x00ffffff-no-rj"
+  }
+]

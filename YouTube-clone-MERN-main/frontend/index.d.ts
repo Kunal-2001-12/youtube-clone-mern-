@@ -1,0 +1,1 @@
+// This file is intentionally left blank. Add global TypeScript types or module declarations here if needed.

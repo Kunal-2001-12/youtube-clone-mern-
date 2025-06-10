@@ -1,0 +1,29 @@
+version: "3.8"
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "3000:3000"
+    environment:
+      MONGO_URI: ${MONGO_URI}
+      SECRET_KEY: ${SECRET_KEY}
+      EMAIL: ${EMAIL}
+      PASSWORD: ${PASSWORD}
+    restart: unless-stopped
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "4000:4000"
+    environment:
+      VITE_BACKEND_URL: http://localhost:3000
+    restart: unless-stopped
+
+networks:
+  default:
+    external: true
+    name: my-predefined-network
+
+volumes:
+  mongo_data:
+    driver: local
