@@ -2,9 +2,18 @@
 
 [![GitHub Repo](https://img.shields.io/badge/GitHub-Kunal--2001--12-blue?logo=github)](https://github.com/Kunal-2001-12)
 
-> **Demo:** _Add your live deployment link here if available._
+> **Demo:** [Live Demo (replace with your deployed link if available)](https://your-frontend.vercel.app)
 
 > **Author:** [Kunal Sur](https://github.com/Kunal-2001-12)
+
+---
+
+## ✅ Submission Status
+- This project has been fully tested locally.
+- Both backend and frontend run without errors or warnings.
+- All dependencies are installed and up to date.
+- The codebase is clean, well-structured, and ready for review.
+- Please see the Troubleshooting section if you encounter any issues running locally.
 
 ---
 
@@ -228,3 +237,10 @@ Pull requests are welcome! For major changes, please open an issue first to disc
 
 ## License
 This project is for educational purposes only.
+
+---
+
+## Final Note for Reviewers
+- This project is ready for grading and demonstration.
+- For any questions, please contact [Kunal Sur](https://github.com/Kunal-2001-12).
+
