@@ -121,8 +121,23 @@ function Browse() {
     fetchVideos();
   }, []);
 
+  // Fallback dummy video if backend fails or no videos
+  const dummyVideos = [
+    {
+      _id: "dummy1",
+      title: "Demo Video",
+      uploader: "Demo Channel",
+      videoURL: "https://www.w3schools.com/html/mov_bbb.mp4",
+      thumbnailUrl: "/img/fallback-thumbnail.png",
+      profilePic: "/img/avatar.png",
+      views: 1234,
+      uploadDate: "2025-06-10",
+      category: "All"
+    }
+  ];
+
   // Filter and search logic
-  const filteredVideos = videos.filter(
+  const filteredVideos = (videos.length > 0 ? videos : dummyVideos).filter(
     v => selectedFilter === "All" || v.category === selectedFilter
   );
 
@@ -187,6 +202,15 @@ function Browse() {
                       src={video.thumbnailUrl || "/img/fallback-thumbnail.png"} 
                       alt={video.title} 
                       onError={e => { e.target.onerror = null; e.target.src = '/img/fallback-thumbnail.png'; }}
+                      style={{ cursor: 'pointer' }}
+                      onClick={() => {
+                        // If dummy video, open directly, else use normal navigation
+                        if (video._id === "dummy1") {
+                          window.open(video.videoURL, '_blank');
+                        } else {
+                          navigate(`/video/${video._id}`);
+                        }
+                      }}
                     />
                     <div className="channel-basic-data">
                       <img src={video.profilePic || "/img/default-profile.png"} alt={video.uploader || "Channel"} className="channel-profile" />

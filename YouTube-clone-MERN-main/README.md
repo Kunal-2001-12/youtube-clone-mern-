@@ -18,6 +18,7 @@
   - [3. Install Dependencies](#3-install-dependencies)
   - [4. Environment Variables](#4-environment-variables)
   - [5. Running the Project](#5-running-the-project)
+  - [6. Troubleshooting](#6-troubleshooting)
 - [Usage](#usage)
 - [Project Details](#project-details)
 - [API Endpoints](#api-endpoints)
@@ -39,6 +40,7 @@
 - Password reset via email
 - Responsive design for desktop and mobile
 - Modern UI with React, MUI, and custom CSS
+- **Robust fallback:** Dummy video always shown if backend is down
 
 ---
 
@@ -99,8 +101,8 @@ YouTube-clone-MERN-main/
 
 ### 2. Clone the Repository
 ```powershell
-git clone <your-repo-url>
-cd YouTube-clone-MERN-main
+# Clone the repo and enter the main folder
+cd "C:\Users\kunal\OneDrive\Desktop\YouTube-clone-MERN-main (1)\YouTube-clone-MERN-main"
 ```
 
 ### 3. Install Dependencies
@@ -116,23 +118,24 @@ npm install
 ```
 
 ### 4. Environment Variables
-#### Backend
-Create a `.env` file in the `backend/` folder:
+#### Backend (`backend/.env`)
 ```
-MONGO_URI=<your-mongodb-connection-string>
-SECRET_KEY=<your-jwt-secret>
-EMAIL=<your-email-for-nodemailer>
-PASSWORD=<your-app-password-for-nodemailer>
+MONGO_URI=mongodb://localhost:27017/youtube-clone
+SECRET_KEY=F8d7A2b1C3e4G5h6I7j8K9l0M1n2O3p4
+EMAIL=kunalsur2001@gmail.com
+PASSWORD=elig zavm iglw wckz
 BACKEND_URL=http://localhost:4000
 ```
-#### Frontend
-If you use any environment variables, set them in `frontend/.env` (optional).
+#### Frontend (`frontend/.env`)
+```
+VITE_BACKEND_URL=http://localhost:4000
+```
 
 ### 5. Running the Project
 #### Start Backend
 ```powershell
 cd backend
-npm run dev
+npm start
 ```
 - The backend will run on [http://localhost:4000](http://localhost:4000)
 
@@ -143,6 +146,17 @@ cd frontend
 npm run dev
 ```
 - The frontend will run on [http://localhost:5173](http://localhost:5173) (default Vite port)
+
+### 6. Troubleshooting
+- **"Failed to fetch" or CORS errors:** Ensure both servers are running and ports match your .env files.
+- **Port already in use:** Kill the process using the port (see below).
+- **How to kill a process on port 4000 (PowerShell):**
+  ```powershell
+  Stop-Process -Id (Get-NetTCPConnection -LocalPort 4000).OwningProcess -Force
+  ```
+- **Always restart servers after changing .env files.**
+- **No node_modules in repo:** Do not upload `node_modules` or `package-lock.json` to GitHub.
+- **Dummy video fallback:** If backend is down, a demo video will always show on the home page.
 
 ---
 
@@ -164,12 +178,15 @@ npm run dev
 - Channel page for managing videos and channel details.
 - Search and filter functionality.
 - Responsive design for all devices.
+- **No hardcoded API URLs:** All API calls use `backendURL` from `src/config.js`.
+- **Error-free run:** All warnings and errors are resolved for a clean experience.
 
 ### Backend (Node.js, Express)
 - RESTful API for users, videos, channels, comments, likes, playlists.
 - JWT authentication and protected routes.
 - MongoDB for storing users, videos, channels, comments, and metadata.
 - Nodemailer for password reset and registration emails.
+- CORS enabled for frontend port.
 
 ---
 

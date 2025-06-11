@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
 .videoframe {
   width: inherit;
 }
@@ -520,7 +522,6 @@
 }
 
 /* --- YouTube-like Video Page UI Improvements --- */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
 .main-video-section, .main-video-section2 {
   font-family: 'Roboto', Arial, Helvetica, sans-serif !important;

@@ -46,7 +46,7 @@ function Navbar() {
     if (User.success) {
       setisbtnClicked(false);
     }
-  }, [user]);
+  }, [user, User.success]);
 
   useEffect(() => {
     const handler = (e) => {
@@ -55,6 +55,7 @@ function Navbar() {
       }
     };
     document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
   }, []);
 
   useEffect(() => {
@@ -64,6 +65,7 @@ function Navbar() {
       }
     };
     document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
   }, []);
 
   useEffect(() => {
@@ -80,7 +82,6 @@ function Navbar() {
         // console.log(error.message);
       }
     };
-
     getData();
   }, [user?.email]);
 
@@ -94,7 +95,7 @@ function Navbar() {
     if (!user || !user.email) {
       dispatch(fetchUserData());
     }
-  }, []);
+  }, [dispatch, user]);
 
   const handleSearch = (e) => {
     setSearchedData(e.target.value);
