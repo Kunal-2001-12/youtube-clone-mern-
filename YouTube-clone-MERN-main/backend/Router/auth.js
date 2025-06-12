@@ -12,6 +12,7 @@ const {
   verifyAccessToken,
 } = require("../lib/tokens");
 const requireAuth = require("./requireAuth");
+const { OAuth2Client } = require('google-auth-library');
 
 auth.post("/signup", async (req, res) => {
   try {
@@ -203,6 +204,66 @@ auth.get("/userdata", requireAuth, async (req, res) => {
       success: false,
       message: error.message,
     });
+  }
+});
+
+/**
+ * Google Login Endpoint
+ * Receives Google ID token from frontend, verifies it, creates/returns user, and issues JWT.
+ * POST /google-login
+ * Body: { credential: string }
+ */
+auth.post('/google-login', async (req, res) => {
+  try {
+    const { credential } = req.body;
+    if (!credential) {
+      return res.status(400).json({ message: 'Missing Google credential' });
+    }
+
+    const client = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
+    // Verify the ID token
+    const ticket = await client.verifyIdToken({
+      idToken: credential,
+      audience: process.env.GOOGLE_CLIENT_ID,
+    });
+    const payload = ticket.getPayload();
+    if (!payload) {
+      return res.status(401).json({ message: 'Invalid Google token' });
+    }
+    const { email, name, picture } = payload;
+    if (!email) {
+      return res.status(400).json({ message: 'Google account missing email' });
+    }
+
+    // Find or create user
+    let user = await userData.findOne({ email });
+    if (!user) {
+      user = new userData({
+        name: name || email,
+        email,
+        password: 'GOOGLE_OAUTH', // Not used, but required by schema
+        profilePic: picture,
+      });
+      await user.save();
+    } else if (!user.profilePic && picture) {
+      user.profilePic = picture;
+      await user.save();
+    }
+
+    // Issue JWT
+    const accessToken = generateAccessToken(user);
+    return res.status(200).json({
+      message: 'GOOGLE LOGIN SUCCESSFUL',
+      user: {
+        name: user.name,
+        email: user.email,
+        profilePic: user.profilePic,
+      },
+      token: accessToken,
+    });
+  } catch (error) {
+    console.error('Google login error:', error);
+    res.status(500).json({ message: 'Google login failed', error: error.message });
   }
 });
 

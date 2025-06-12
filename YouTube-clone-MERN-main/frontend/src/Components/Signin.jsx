@@ -6,6 +6,7 @@ import Reset from "./Reset";
 import { backendURL } from "../config";
 import { useDispatch } from "react-redux";
 import { setUser } from "../reducer/user";
+import { GoogleLogin, GoogleOAuthProvider } from "@react-oauth/google";
 
 function Signin(prop) {
   const [data, setData] = useState({});
@@ -178,6 +179,41 @@ function Signin(prop) {
         style={{ display: showReset ? "block" : "none" }}
       >
         <Reset />
+      </div>
+      <div style={{ margin: "24px 0", textAlign: "center" }}>
+        <GoogleOAuthProvider clientId="YOUR_REAL_GOOGLE_CLIENT_ID_HERE">
+          <GoogleLogin
+            onSuccess={async (credentialResponse) => {
+              if (credentialResponse.credential) {
+                try {
+                  const response = await fetch(`${backendURL}/google-login`, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ token: credentialResponse.credential }),
+                  });
+                  const result = await response.json();
+                  if (result.success) {
+                    LoginNotify();
+                    dispatch(setUser(result.user));
+                    if (result.token) localStorage.setItem("token", result.token);
+                    setTimeout(() => {
+                      window.location.href = "/";
+                      document.body.classList.remove("bg-class");
+                    }, 1200);
+                  } else {
+                    InvalidNotify();
+                  }
+                } catch (error) {
+                  alert("Google login failed: " + error.message);
+                }
+              }
+            }}
+            onError={() => {
+              alert("Google Login Failed");
+            }}
+            width="100%"
+          />
+        </GoogleOAuthProvider>
       </div>
     </>
   );

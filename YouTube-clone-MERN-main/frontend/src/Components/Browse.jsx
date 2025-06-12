@@ -64,8 +64,23 @@ function Browse() {
 
   // --- YouTube-like filter categories ---
   const filterCategories = [
-    "All", "Music", "Trending", "Web Development", "News", "AI", "Gaming", "Live", "Sports", "Learning", "Podcasts", "Movies", "Recently uploaded", "Watched", "New to you"
+    { label: "All", value: "All" },
+    { label: "Music", value: "Music" },
+    { label: "Trending", value: "Trending" },
+    { label: "Web Development", value: "Web Development" },
+    { label: "News", value: "News" },
+    { label: "AI", value: "AI" },
+    { label: "Gaming", value: "Gaming" },
+    { label: "Live", value: "Live" },
+    { label: "Sports", value: "Sports" },
+    { label: "Learning", value: "Learning" },
+    { label: "Podcasts", value: "Podcasts" },
+    { label: "Movies", value: "Movies" },
+    { label: "Recently uploaded", value: "Recently uploaded" },
+    { label: "Watched", value: "Watched" },
+    { label: "New to you", value: "New to you" },
   ];
+  const [selectedFilter, setSelectedFilter] = useState("All");
 
   // --- Channel creation CTA for new users ---
   // Show a floating button if user is signed in and has no channel
@@ -89,7 +104,6 @@ function Browse() {
   const [videos, setVideos] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [selectedFilter, setSelectedFilter] = useState("All");
 
   useEffect(() => {
     async function fetchVideos() {
@@ -174,14 +188,24 @@ function Browse() {
         <div className={menuClicked === true ? `browse-data ${theme ? "" : "light-mode"}` : `browse-data2 ${theme ? "" : "light-mode"}`}
           style={menuClicked === false ? { left: "74px" } : { left: "250px" }}>
           {/* Filter row */}
-          <div className="filter-bar">
+          <div className="filter-bar" role="tablist" aria-label="Video categories">
             {filterCategories.map(cat => (
               <button
-                key={cat}
-                className={`filter-btn${selectedFilter === cat ? ' active' : ''}`}
-                onClick={() => setSelectedFilter(cat)}
+                key={cat.value}
+                className={`filter-btn${selectedFilter === cat.value ? ' active' : ''}`}
+                onClick={() => setSelectedFilter(cat.value)}
+                role="tab"
+                aria-selected={selectedFilter === cat.value}
+                tabIndex={0}
+                style={{
+                  outline: selectedFilter === cat.value ? '2px solid #3ea6ff' : 'none',
+                  fontWeight: selectedFilter === cat.value ? 700 : 500,
+                  background: selectedFilter === cat.value ? '#3ea6ff' : '',
+                  color: selectedFilter === cat.value ? '#fff' : '',
+                  transition: 'background 0.15s, color 0.15s',
+                }}
               >
-                {cat}
+                {cat.label}
               </button>
             ))}
           </div>
@@ -189,11 +213,20 @@ function Browse() {
           <div className="video-section" style={{ marginLeft: menuClicked ? "40px" : "40px" }}>
             <div className="uploaded-videos">
               {loading ? (
-                <p style={{ color: theme ? '#fff' : '#222', fontSize: '1.2rem', marginTop: '40px', gridColumn: '1/-1' }}>Loading videos...</p>
+                <div style={{ gridColumn: '1/-1', textAlign: 'center', marginTop: 40 }}>
+                  <img src="/img/loading.gif" alt="Loading..." style={{ width: 60, height: 60, marginBottom: 12 }} />
+                  <p style={{ color: theme ? '#fff' : '#222', fontSize: '1.2rem' }}>Loading videos...</p>
+                </div>
               ) : error ? (
-                <p style={{ color: 'red', fontSize: '1.2rem', marginTop: '40px', gridColumn: '1/-1' }}>{error}</p>
+                <div style={{ gridColumn: '1/-1', textAlign: 'center', marginTop: 40 }}>
+                  <img src="/img/error.png" alt="Error" style={{ width: 60, height: 60, marginBottom: 12 }} />
+                  <p style={{ color: 'red', fontSize: '1.2rem' }}>{error}</p>
+                </div>
               ) : filteredVideos.length === 0 ? (
-                <p style={{ color: theme ? '#fff' : '#222', fontSize: '1.2rem', marginTop: '40px', gridColumn: '1/-1' }}>No videos to display.</p>
+                <div style={{ gridColumn: '1/-1', textAlign: 'center', marginTop: 40 }}>
+                  <img src="/img/nothing.png" alt="No videos" style={{ width: 60, height: 60, marginBottom: 12 }} />
+                  <p style={{ color: theme ? '#fff' : '#222', fontSize: '1.2rem' }}>No videos to display.</p>
+                </div>
               ) : (
                 filteredVideos.map(video => (
                   <div key={video._id} className="video-data">
