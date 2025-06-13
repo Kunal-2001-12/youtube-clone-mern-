@@ -9,9 +9,16 @@
 
 ## ✅ Submission Status
 - Project fully tested locally: backend and frontend run without errors or warnings.
-- All dependencies are up to date.
+- All dependencies are up to date, including `google-auth-library` in the backend.
 - Codebase is clean, well-structured, and ready for review.
 - See Troubleshooting if you encounter any issues running locally.
+
+---
+
+## Important Reviewer Note (June 2025)
+> **If you see `Error: Cannot find module 'google-auth-library'` in the backend:**
+> 1. Make sure to run `npm install` inside the `backend` folder before starting the backend server. This will install all required dependencies, including `google-auth-library`.
+> 2. The dependency is now included in `backend/package.json` and will be installed automatically.
 
 ---
 
@@ -136,6 +143,7 @@ VITE_GOOGLE_CLIENT_ID=your-google-client-id
 #### Start Backend
 ```powershell
 cd backend
+npm install
 npm start
 ```
 - The backend will run on [http://localhost:4000](http://localhost:4000)
@@ -144,6 +152,7 @@ npm start
 Open a new terminal:
 ```powershell
 cd frontend
+npm install
 npm run dev
 ```
 - The frontend will run on [http://localhost:5173](http://localhost:5173) (default Vite port)
@@ -166,6 +175,7 @@ docker-compose up --build
 - **Always restart servers after changing .env files.**
 - **No node_modules in repo:** Do not upload `node_modules` or `package-lock.json` to GitHub.
 - **Dummy video fallback:** If backend is down, a demo video will always show on the home page.
+- **If you see `Error: Cannot find module 'google-auth-library'`, run `npm install` in the backend folder.**
 
 ---
 
@@ -267,6 +277,7 @@ This project is for educational purposes only.
 
 ## Final Note for Reviewers
 - This project is ready for grading and demonstration.
+- If you see any dependency errors, please ensure you have run `npm install` in both backend and frontend folders.
 - For any questions, please contact [Kunal Sur](https://github.com/Kunal-2001-12).
 
 ---
